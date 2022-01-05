@@ -1,0 +1,12 @@
+.home-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-photo img {
+  margin-left: 10em;
+  margin-top: 150px;
+  width: 83%;
+  height: auto;
+  object-fit: cover;
+}

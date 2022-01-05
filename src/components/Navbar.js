@@ -9,7 +9,7 @@ import '../companents.css/navbar.css'
 
 const Navbar = () => {
   return (
-    <>
+    <div className="sticky">
       <nav className="navbar">
         <div className="image-logo">
           <img src={logo} alt='logo'></img>
@@ -33,7 +33,7 @@ const Navbar = () => {
 
       </nav>
       <div className="line"></div>
-    </>
+    </div>
   )
 
 }
