@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../companents.css/products.css"
+import Product from '../components/Product'
 
 const Products = () => {
   const [products, setProducts] = useState([])
+
+
 
   const productsHeader = async () => {
     const url = `https://fakestoreapi.com/products`;
@@ -15,6 +18,8 @@ const Products = () => {
   useEffect(() => {
     productsHeader()
   }, [])
+
+
   return (
     <>
       <div className="products">
@@ -34,9 +39,7 @@ const Products = () => {
 
       <div className="all-products">{
         products.map((product) => (
-          <div className="image-div">
-            <img src={product.image} alt="product-img"></img>
-          </div>
+          <Product product={product}></Product>
         ))
       }
       </div>
