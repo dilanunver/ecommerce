@@ -43,7 +43,7 @@ const Product = ({ product }) => {
           <button className="decreasing" onClick={decreasing}>-</button>
         </div>
         <div>
-          <button disabled={disable} onClick={() => console.log('hello')} className="add-to-cart">
+          <button disabled={disable} className="add-to-cart">
             <img src={cart} alt='cart' className="cart-image"></img>
             <p > Add to cart</p>
           </button>
