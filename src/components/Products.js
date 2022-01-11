@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+
 import "../companents.css/products.css"
 import Product from '../components/Product'
+import { MainContext, useContext } from "../Context";
 
 const Products = () => {
-  const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
+
+  const { products, filteredProducts, setFilteredProducts } = useContext(MainContext)
 
 
 
-  const productsHeader = async () => {
-    const url = `https://fakestoreapi.com/products`;
-    const response = await fetch(url);
-    const result = await response.json()
-    console.log(result)
-    setProducts(result)
-    setFilteredProducts(result)
-  }
 
-  useEffect(() => {
-    productsHeader()
-  }, [])
+
 
   const allProducts = () => {
     setFilteredProducts(products)
@@ -28,11 +19,9 @@ const Products = () => {
   const mensClothing = () => {
     console.log(products)
     let filterResult = products.filter(filterMen => filterMen.category === "men's clothing")
-    console.log(products)
     setFilteredProducts(filterResult)
   }
   const womensClothing = () => {
-    console.log(products)
     let filterResult = products.filter(filterWomen => filterWomen.category === "women's clothing")
     setFilteredProducts(filterResult)
 
@@ -45,7 +34,6 @@ const Products = () => {
     let filterResult = products.filter(filterWomen => filterWomen.category === "electronics")
     setFilteredProducts(filterResult)
     console.log(filteredProducts)
-    console.log(products)
 
   }
 

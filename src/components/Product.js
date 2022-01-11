@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import cart from '../pictures/icon-cart.png'
+import { MainContext, useContext } from "../Context";
 
 const Product = ({ product }) => {
-  const [count, setCount] = useState(0);
-  const [disable, setDisable] = useState(true)
+
+
+  const { count, setCount, disable, setDisable } = useContext(MainContext)
 
 
   const decreasing = () => {
