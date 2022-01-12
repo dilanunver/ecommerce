@@ -1,13 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import cart from '../pictures/icon-cart.png'
-import { MainContext, useContext } from "../Context";
+import { MainContext } from "../Context";
+
 
 const Product = ({ product }) => {
 
+  const [count, setCount] = useState(0);
+  const [disable, setDisable] = useState(true)
+  const { setIsOpen, selectedProducts, setSelectedProducts } = useContext(MainContext)
 
-  const { count, setCount, disable, setDisable } = useContext(MainContext)
+  const addToCart = () => {
+    setIsOpen(true);
+    if (selectedProducts.find((sameProduct) => sameProduct.id === product.id)) {
+      let addingItemToCart = [...selectedProducts];
+      console.log(addingItemToCart)
+
+      setSelectedProducts(addingItemToCart)
+    } else {
+      let addingItemToCart = [...selectedProducts, { ...product, count }];
+      setSelectedProducts(addingItemToCart)
+    }
 
 
+
+  }
   const decreasing = () => {
     if (count === 0) {
       setCount(0)
@@ -47,7 +63,7 @@ const Product = ({ product }) => {
         <div>
           <button disabled={disable} className="add-to-cart">
             <img src={cart} alt='cart' className="cart-image"></img>
-            <p > Add to cart</p>
+            <p onClick={addToCart}> Add to cart</p>
           </button>
         </div>
       </div>

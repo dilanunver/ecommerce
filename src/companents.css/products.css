@@ -130,4 +130,25 @@
   color: white;
   border: 1px solid hsl(25, 88%, 68%);
   cursor: initial;
+  pointer-events: none;
+}
+.add-to-cart-modal {
+  background-color: whitesmoke;
+  width: 400px;
+  height: auto;
+  margin-left: 80%;
+  margin-top: 3%;
+}
+
+.modal-img {
+  height: 100px;
+  width: 200px;
+}
+.modal-flex {
+  display: flex;
+  flex-direction: row;
+}
+.modal-info {
+  display: flex;
+  flex-direction: column;
 }

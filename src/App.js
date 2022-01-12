@@ -5,42 +5,16 @@ import Categories from './components/Categories';
 import Contact from './components/Contact';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./companents.css/app.css"
-import { MainContext } from './Context'
-import { useEffect, useState } from 'react';
+
+import { Context } from "./Context"
+
 
 
 function App() {
-  const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
-  const [count, setCount] = useState(0);
-  const [disable, setDisable] = useState(true)
 
-
-  const productsHeader = async () => {
-    const url = `https://fakestoreapi.com/products`;
-    const response = await fetch(url);
-    const result = await response.json()
-    console.log(result)
-    setProducts(result)
-    setFilteredProducts(result)
-  }
-  useEffect(() => {
-    productsHeader()
-  }, [])
-
-  const data = {
-    products,
-    setProducts,
-    filteredProducts,
-    setFilteredProducts,
-    count,
-    setCount,
-    disable,
-    setDisable
-  }
 
   return (
-    <MainContext.Provider value={data}>
+    <Context>
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
@@ -49,7 +23,7 @@ function App() {
           <Route path='/contact' element={<Contact></Contact>}></Route>
         </Routes>
       </BrowserRouter>
-    </MainContext.Provider>
+    </Context>
   )
 }
 
