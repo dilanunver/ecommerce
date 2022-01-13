@@ -6,22 +6,30 @@ const Context = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState([])
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([])
-
-  console.log(selectedProducts)
+  const [loading, setLoading] = useState(true)
 
 
   const productsHeader = async () => {
+
     const url = `https://fakestoreapi.com/products`;
     const response = await fetch(url);
     const result = await response.json()
     console.log(result)
     setProducts(result)
     setFilteredProducts(result)
+    setLoading(false)
   }
   useEffect(() => {
     productsHeader()
   }, [])
 
+  if (loading) {
+    return (
+      <div>
+        Loading
+      </div>
+    )
+  }
   const data = {
     products,
     setProducts,

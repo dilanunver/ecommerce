@@ -6,9 +6,7 @@ import { MainContext } from "../Context";
 import ShoppingCart from "./ShoppingCart";
 const Home = () => {
 
-  const { modalIsOpen, selectedProducts } = useContext(MainContext)
-
-  console.log(selectedProducts)
+  const { modalIsOpen } = useContext(MainContext)
 
 
   return (

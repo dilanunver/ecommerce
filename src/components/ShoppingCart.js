@@ -4,6 +4,7 @@ import { MainContext } from '../Context';
 
 const ShoppingCart = () => {
   const { modalIsOpen, setIsOpen, selectedProducts, setSelectedProducts } = useContext(MainContext)
+  console.log(selectedProducts)
 
   const sumOfCount = selectedProducts.map((selectedProduct) => (selectedProduct.count));
   let sum = 0;
