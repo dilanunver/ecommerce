@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from '../pictures/logo.svg'
 import cart from '../pictures/icon-cart.png'
 import { Link } from "react-router-dom";
 import '../companents.css/navbar.css'
 
+import { MainContext } from "../Context";
+import ShoppingCart from "./ShoppingCart";
 
 
 
 const Navbar = () => {
+
+  const { openModal, setOpenModal, modalIsOpen, setIsOpen, } = useContext(MainContext)
+  const modalOpen = () => {
+    setOpenModal(true)
+    setIsOpen(true)
+  }
+  const modalClose = () => {
+    setOpenModal(false)
+    setIsOpen(false)
+    console.log('modal close')
+  }
+
   return (
     <div className="sticky">
       <nav className="navbar">
@@ -26,14 +40,18 @@ const Navbar = () => {
               Contact
             </Link>
           </div>
+
+
           <div className="image-cart">
-            <img src={cart} alt='cart'></img>
+            <img src={cart} alt='cart' onMouseEnter={modalOpen}></img>
+            {modalIsOpen ? <ShoppingCart></ShoppingCart> : ''}
           </div>
+
         </div>
 
-      </nav>
+      </nav >
       <div className="line"></div>
-    </div>
+    </div >
   )
 
 }

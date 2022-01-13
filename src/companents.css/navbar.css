@@ -30,6 +30,7 @@
 }
 .image-cart {
   margin-right: 5em;
+  cursor: pointer;
 }
 .line {
   margin-left: 15em;

@@ -11,29 +11,19 @@ const Product = ({ product }) => {
 
   const addToCart = () => {
     setIsOpen(true);
-
     const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id)
-    console.log(sameItem)
-    if (sameItem) {
 
+    if (sameItem) {
       const productCount = { ...product, count }
       const spreadSameItem = { ...sameItem, count: sameItem.count + productCount.count }
-
       const filteredProducts = selectedProducts.filter(selectedProduct => selectedProduct.id !== product.id)
-      console.log(filteredProducts)
       filteredProducts.push(spreadSameItem)
-
-
-
       setSelectedProducts(filteredProducts)
-      return
+
     } else {
       let addingItemToCart = [...selectedProducts, { ...product, count }];
       setSelectedProducts(addingItemToCart)
     }
-
-
-
   }
   const decreasing = () => {
     if (count === 0) {

@@ -7,7 +7,7 @@ const Context = ({ children }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
+  const [openModal, setOpenModal] = useState(false)
 
   const productsHeader = async () => {
 
@@ -38,7 +38,9 @@ const Context = ({ children }) => {
     modalIsOpen,
     setIsOpen,
     selectedProducts,
-    setSelectedProducts
+    setSelectedProducts,
+    openModal,
+    setOpenModal
   }
   return (
     <MainContext.Provider value={data}>

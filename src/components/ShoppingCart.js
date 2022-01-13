@@ -4,8 +4,6 @@ import { MainContext } from '../Context';
 
 const ShoppingCart = () => {
   const { modalIsOpen, setIsOpen, selectedProducts, setSelectedProducts } = useContext(MainContext)
-  console.log(selectedProducts)
-
   const sumOfCount = selectedProducts.map((selectedProduct) => (selectedProduct.count));
   let sum = 0;
   for (let i = 0; i < sumOfCount.length; i++) {
@@ -13,10 +11,10 @@ const ShoppingCart = () => {
   }
   return (
     <Modal
-
       isOpen={modalIsOpen}
       className="add-to-cart-modal"
       ariaHideApp={false}
+      onMouseEnter={setIsOpen(true)}
     >
       <h5>My Shopping Bag ({sum} product)</h5>
       {selectedProducts.map((selectedProduct) => {
