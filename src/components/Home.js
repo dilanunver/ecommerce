@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import homePhoto from '../pictures/homephoto.png'
 import '../companents.css/home.css'
 import Products from "./Products";
-import { MainContext } from "../Context";
-import ShoppingCart from "./ShoppingCart";
+
 const Home = () => {
 
-  const { modalIsOpen } = useContext(MainContext)
+
 
 
   return (
@@ -15,7 +14,7 @@ const Home = () => {
         <img src={homePhoto} alt="homephoto" ></img>
       </div>
       <Products></Products>
-      {modalIsOpen && <ShoppingCart />}
+
     </div>
   )
 

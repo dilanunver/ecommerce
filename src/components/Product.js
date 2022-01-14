@@ -7,10 +7,10 @@ const Product = ({ product }) => {
 
   const [count, setCount] = useState(0);
   const [disable, setDisable] = useState(true)
-  const { setIsOpen, selectedProducts, setSelectedProducts } = useContext(MainContext)
+  const { selectedProducts, setSelectedProducts, isOpenMyBag, setIsOpenMyBag } = useContext(MainContext)
 
   const addToCart = () => {
-    setIsOpen(true);
+    setIsOpenMyBag(true)
     const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id)
 
     if (sameItem) {

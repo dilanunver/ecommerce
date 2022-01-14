@@ -140,10 +140,6 @@
   margin-top: 13%;
 }
 
-.modal-img {
-  height: 100px;
-  width: 200px;
-}
 .modal-flex {
   display: flex;
   flex-direction: row;
