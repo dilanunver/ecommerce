@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import logo from '../pictures/logo.svg'
 import cart from '../pictures/icon-cart.png'
 import { Link } from "react-router-dom";
 import '../companents.css/navbar.css'
 import { MainContext } from "../Context";
-
 
 
 
@@ -16,7 +15,7 @@ const Navbar = () => {
   for (let i = 0; i < sumOfCount.length; i++) {
     sum += sumOfCount[i];
   }
-
+  console.log(selectedProducts)
   return (
     <div className="sticky">
       <nav className="navbar">
@@ -44,24 +43,27 @@ const Navbar = () => {
               <h5 className="mybag-header">My Shopping Bag ({sum} product)</h5>
               {selectedProducts.map((selectedProduct) => {
                 return (
+
                   <div >
                     <div className="flex">
                       <img src={selectedProduct.image} alt="modal-img" className="modal-img"></img>
                       <div className="mybag-info">
                         <div>{selectedProduct.title}</div>
-                        <div>Amount: {selectedProduct.count} </div>
-                        <div>€{selectedProduct.price}</div>
-
-
-
+                        <div className="amount">Amount: {selectedProduct.count} </div>
+                        <div className="mybag-price">€{selectedProduct.price}</div>
                       </div>
-
                     </div>
                     <div className="mybag-line"></div>
                   </div>
+
+
                 )
               })}
+              <Link to='/mybag' className="complete-order">
+                Complete Order
+              </Link>
             </div>
+
 
           </div>
 

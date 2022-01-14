@@ -1,0 +1,27 @@
+.mybag-complete-order {
+  margin-left: 10em;
+  margin-top: 190px;
+  width: 83%;
+  height: auto;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 24px;
+}
+.mybag-flex {
+  margin: 20px 0 20px 14em;
+  display: flex;
+  flex-direction: row;
+}
+.mybagpage-line {
+  width: 83%;
+  margin-left: 14em;
+  height: 1px;
+  background: #e6e6e6;
+}
+.mybagpage-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-right: 10%;
+}

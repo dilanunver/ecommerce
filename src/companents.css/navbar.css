@@ -41,7 +41,7 @@
 }
 .mybag-container {
   width: 400px;
-  height: auto;
+  height: 300px;
   top: 30px;
   right: 0;
   position: absolute;
@@ -50,6 +50,8 @@
   border: 1px solid #e6e6e6;
   box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
   overflow: hidden;
+  overflow-y: scroll;
+  display: none;
 }
 .mybag-container.isOpen {
   display: block;
@@ -82,4 +84,26 @@
   width: 100%;
   background: #e6e6e6;
   height: 1px;
+}
+.amount {
+  font-size: 12px;
+}
+.mybag-price {
+  color: hsl(26, 100%, 55%);
+  font-weight: bold;
+  font-size: 16px;
+}
+.complete-order {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(26, 100%, 55%);
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
 }
