@@ -41,7 +41,7 @@
 }
 .mybag-container {
   width: 400px;
-  height: 300px;
+  height: 220px;
   top: 30px;
   right: 0;
   position: absolute;
@@ -50,12 +50,16 @@
   border: 1px solid #e6e6e6;
   box-shadow: 0 3px 10px 0 rgb(0 0 0 / 7%);
   overflow: hidden;
-  overflow-y: scroll;
   display: none;
 }
 .mybag-container.isOpen {
   display: block;
 }
+
+.mybag-container.withScrollBar {
+  overflow-y: scroll;
+}
+
 .mybag-header {
   margin: 15px;
   font-family: "Kumbh Sans", sans-serif;

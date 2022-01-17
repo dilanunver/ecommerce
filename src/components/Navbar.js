@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="image-cart" onMouseEnter={() => setIsOpenMyBag(true)} onMouseLeave={() => setIsOpenMyBag(false)} >
             <img src={cart} alt='cart' className="cart-container" ></img>
             <div style={{ marginTop: 10 }}></div>
-            <div className={`mybag-container ${isOpenMyBag && 'isOpen'}`}>
+            {<div className={`mybag-container ${isOpenMyBag && selectedProducts.length > 0 ? 'isOpen' : ''} ${selectedProducts.length > 1 ? 'withScrollBar' : ''}`}>
               <h5 className="mybag-header">My Shopping Bag ({sum} product)</h5>
               {selectedProducts.map((selectedProduct) => {
                 return (
@@ -59,10 +59,12 @@ const Navbar = () => {
 
                 )
               })}
-              <Link to='/mybag' className="complete-order">
+              {selectedProducts.length > 0 && <Link to='/mybag' className="complete-order">
                 Complete Order
-              </Link>
+              </Link>}
+
             </div>
+            }
 
 
           </div>
