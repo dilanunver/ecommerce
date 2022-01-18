@@ -28,4 +28,29 @@
 .mybag-adding,
 .mybag-decreasing {
   cursor: pointer;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: hsl(26, 100%, 55%);
+}
+.mybag-adding {
+  border-left: 1px solid rgb(230, 230, 230);
+}
+.mybag-decreasing {
+  border-right: 1px solid rgb(230, 230, 230);
+}
+.mybag-adding-decreasing {
+  border: 1px solid rgb(206, 203, 203);
+  border-radius: 5px;
+}
+.mybag-decreasing.disable {
+  color: rgb(149, 149, 149);
+  background-color: rgb(230, 230, 230);
+  cursor: initial;
+  border-right: 1px solid rgb(230, 230, 230);
+  pointer-events: none;
+}
+.selected-product-count {
+  padding: 0 10px;
 }

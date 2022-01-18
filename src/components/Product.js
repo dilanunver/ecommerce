@@ -53,9 +53,9 @@ const Product = ({ product }) => {
       </div>
       <div className="counting">
         <div className="adding-decreasing">
-          <button className="adding" onClick={() => setCount(count + 1)}>+</button>
-          <span>{count}</span>
           <button className="decreasing" onClick={decreasing}>-</button>
+          <span>{count}</span>
+          <button className="adding" onClick={() => setCount(count + 1)}>+</button>
         </div>
         <div>
           <button disabled={disable} className="add-to-cart">

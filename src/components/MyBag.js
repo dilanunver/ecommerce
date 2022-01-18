@@ -15,6 +15,10 @@ const MyBag = () => {
     increaseProductCount(product, 1)
 
   }
+  const less = (product) => {
+    increaseProductCount(product, -1)
+  }
+
 
   return (
     <div className="mybag-products">
@@ -29,10 +33,11 @@ const MyBag = () => {
               <div className="mybagpage-info">
                 <div >{selectedProduct.title}</div>
                 <div className="mybag-amount">
-                  <div className="adding-decreasing">
+                  <div className="mybag-adding-decreasing">
+                    {selectedProduct.count < 2 ? <button className="mybag-decreasing disable" onClick={() => less(selectedProduct)} >-</button> :
+                      <button className="mybag-decreasing" onClick={() => less(selectedProduct)} >-</button>}
+                    <span className="selected-product-count">   {selectedProduct.count < 1 ? selectedProduct.count = 1 : selectedProduct.count}</span>
                     <button className="mybag-adding" onClick={() => more(selectedProduct)}>+</button>
-                    <span>  {selectedProduct.count}</span>
-                    <button className="mybag-decreasing" onClick={() => console.log(selectedProduct.count--)} >-</button>
                   </div>
                 </div>
                 <div className="mybagpage-price">€{selectedProduct.price}</div>
