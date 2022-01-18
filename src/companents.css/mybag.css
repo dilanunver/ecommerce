@@ -25,3 +25,7 @@
   width: 90%;
   margin-right: 10%;
 }
+.mybag-adding,
+.mybag-decreasing {
+  cursor: pointer;
+}

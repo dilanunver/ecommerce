@@ -41,7 +41,7 @@
 }
 .mybag-container {
   width: 400px;
-  height: 220px;
+  height: auto;
   top: 30px;
   right: 0;
   position: absolute;
@@ -54,6 +54,12 @@
 }
 .mybag-container.isOpen {
   display: block;
+}
+.complete-order-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 15px;
 }
 
 .mybag-container.withScrollBar {

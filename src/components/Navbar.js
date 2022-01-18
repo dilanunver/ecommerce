@@ -59,9 +59,11 @@ const Navbar = () => {
 
                 )
               })}
-              {selectedProducts.length > 0 && <Link to='/mybag' className="complete-order">
-                Complete Order
-              </Link>}
+              <div className="complete-order-container">
+                {selectedProducts.length > 0 && <Link to='/mybag' className="complete-order">
+                  Complete Order
+                </Link>}
+              </div>
 
             </div>
             }

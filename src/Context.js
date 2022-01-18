@@ -10,7 +10,6 @@ const Context = ({ children }) => {
 
 
   const productsHeader = async () => {
-
     const url = `https://fakestoreapi.com/products`;
     const response = await fetch(url);
     const result = await response.json()
@@ -22,6 +21,17 @@ const Context = ({ children }) => {
   useEffect(() => {
     productsHeader()
   }, [])
+
+  const increaseProductCount = (product, count) => {
+    const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id);
+    if (sameItem) {
+      const productCount = { ...product, count }
+      const spreadSameItem = { ...sameItem, count: sameItem.count + productCount.count }
+      const filteredProducts = selectedProducts.filter(selectedProducts => selectedProducts.id !== product.id)
+      filteredProducts.push(spreadSameItem)
+      setSelectedProducts(filteredProducts)
+    }
+  }
 
   if (loading) {
     return (
@@ -38,7 +48,8 @@ const Context = ({ children }) => {
     selectedProducts,
     setSelectedProducts,
     isOpenMyBag,
-    setIsOpenMyBag
+    setIsOpenMyBag,
+    increaseProductCount
   }
   return (
     <MainContext.Provider value={data}>

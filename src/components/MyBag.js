@@ -1,13 +1,19 @@
-import react, { useContext } from "react";
+import react, { useContext, useState } from "react";
 import { MainContext } from "../Context";
 import '../companents.css/mybag.css'
 
 const MyBag = () => {
-  const { selectedProducts, setSelectedProducts, isOpenMyBag, setIsOpenMyBag } = useContext(MainContext)
+  const { selectedProducts, setSelectedProducts, increaseProductCount } = useContext(MainContext)
+
   const sumOfCount = selectedProducts.map((selectedProduct) => (selectedProduct.count));
   let sum = 0;
   for (let i = 0; i < sumOfCount.length; i++) {
     sum += sumOfCount[i];
+  }
+
+  const more = (product) => {
+    increaseProductCount(product, 1)
+
   }
 
   return (
@@ -24,9 +30,9 @@ const MyBag = () => {
                 <div >{selectedProduct.title}</div>
                 <div className="mybag-amount">
                   <div className="adding-decreasing">
-                    <button className="adding">+</button>
+                    <button className="mybag-adding" onClick={() => more(selectedProduct)}>+</button>
                     <span>  {selectedProduct.count}</span>
-                    <button className="decreasing" >-</button>
+                    <button className="mybag-decreasing" onClick={() => console.log(selectedProduct.count--)} >-</button>
                   </div>
                 </div>
                 <div className="mybagpage-price">€{selectedProduct.price}</div>

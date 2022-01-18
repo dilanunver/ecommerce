@@ -7,18 +7,14 @@ const Product = ({ product }) => {
 
   const [count, setCount] = useState(0);
   const [disable, setDisable] = useState(true)
-  const { selectedProducts, setSelectedProducts, isOpenMyBag, setIsOpenMyBag } = useContext(MainContext)
+  const { selectedProducts, setSelectedProducts, isOpenMyBag, setIsOpenMyBag, increaseProductCount } = useContext(MainContext)
 
   const addToCart = () => {
     setIsOpenMyBag(true)
     const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id)
 
     if (sameItem) {
-      const productCount = { ...product, count }
-      const spreadSameItem = { ...sameItem, count: sameItem.count + productCount.count }
-      const filteredProducts = selectedProducts.filter(selectedProduct => selectedProduct.id !== product.id)
-      filteredProducts.push(spreadSameItem)
-      setSelectedProducts(filteredProducts)
+      increaseProductCount(product, count)
 
     } else {
       let addingItemToCart = [...selectedProducts, { ...product, count }];
