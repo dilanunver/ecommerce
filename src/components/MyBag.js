@@ -27,7 +27,7 @@ const MyBag = () => {
       </div>
       {selectedProducts.map((selectedProduct) => {
         return (
-          <div>
+          <div key={selectedProduct.id}>
             <div className="mybag-flex">
               <img src={selectedProduct.image} alt="modal-img" className="modal-img"></img>
               <div className="mybagpage-info">

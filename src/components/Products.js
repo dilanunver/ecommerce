@@ -6,12 +6,6 @@ import { MainContext, useContext } from "../Context";
 const Products = () => {
 
   const { products, filteredProducts, setFilteredProducts } = useContext(MainContext)
-
-
-
-
-
-
   const allProducts = () => {
     setFilteredProducts(products)
   }
@@ -57,7 +51,7 @@ const Products = () => {
 
       <div className="all-products">{
         filteredProducts.map((product) => (
-          <Product product={product}></Product>
+          <Product key={product.id} product={product}></Product>
         ))
       }
       </div>

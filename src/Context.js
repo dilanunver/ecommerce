@@ -25,10 +25,14 @@ const Context = ({ children }) => {
   const increaseProductCount = (product, count) => {
     const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id);
     if (sameItem) {
-      const spreadSameItem = { ...sameItem, count: sameItem.count + count }
-      const filteredProducts = selectedProducts.filter(selectedProduct => selectedProduct.id !== product.id)
-      filteredProducts.push(spreadSameItem)
-      setSelectedProducts(filteredProducts)
+      const newProductsArray = selectedProducts.map((selectedProduct) => {
+        if (selectedProduct.id === product.id) {
+          return { ...selectedProduct, count: selectedProduct.count + count }
+        }
+        return selectedProduct;
+      }
+      )
+      setSelectedProducts(newProductsArray)
     }
 
   }

@@ -44,7 +44,7 @@ const Navbar = () => {
               {selectedProducts.map((selectedProduct) => {
                 return (
 
-                  <div >
+                  <div key={selectedProduct.id}>
                     <div className="flex">
                       <img src={selectedProduct.image} alt="modal-img" className="modal-img"></img>
                       <div className="mybag-info">
