@@ -24,6 +24,14 @@
   align-items: center;
   width: 90%;
   margin-right: 10%;
+  margin-left: auto;
+}
+.img-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
 }
 .mybag-adding,
 .mybag-decreasing {
@@ -43,6 +51,7 @@
 .mybag-adding-decreasing {
   border: 1px solid rgb(206, 203, 203);
   border-radius: 5px;
+  width: 100px;
 }
 .mybag-decreasing.disable {
   color: rgb(149, 149, 149);
@@ -53,4 +62,16 @@
 }
 .selected-product-count {
   padding: 0 10px;
+}
+.mybag-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+.mybagpage-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30%;
 }

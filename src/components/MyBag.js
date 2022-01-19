@@ -29,9 +29,13 @@ const MyBag = () => {
         return (
           <div key={selectedProduct.id}>
             <div className="mybag-flex">
-              <img src={selectedProduct.image} alt="modal-img" className="modal-img"></img>
               <div className="mybagpage-info">
-                <div >{selectedProduct.title}</div>
+
+                <div className="img-title">
+                  <img src={selectedProduct.image} alt="modal-img" className="modal-img"></img>
+                  <div >{selectedProduct.title}</div>
+                </div>
+
                 <div className="mybag-amount">
                   <div className="mybag-adding-decreasing">
                     {selectedProduct.count < 2 ? <button className="mybag-decreasing disable" onClick={() => less(selectedProduct)} >-</button> :
