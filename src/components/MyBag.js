@@ -1,6 +1,7 @@
-import react, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { MainContext } from "../Context";
 import '../companents.css/mybag.css'
+import { FaTrashAlt } from 'react-icons/fa';
 
 const MyBag = () => {
   const { selectedProducts, setSelectedProducts, increaseProductCount } = useContext(MainContext)
@@ -18,7 +19,13 @@ const MyBag = () => {
   const less = (product) => {
     increaseProductCount(product, -1)
   }
+  const deleteItem = (product) => {
+    const filterProduct = selectedProducts.filter(selectedProduct => selectedProduct.id !== product.id)
+    if (filterProduct) {
+      setSelectedProducts(filterProduct)
+    }
 
+  }
 
   return (
     <div className="mybag-products">
@@ -45,6 +52,7 @@ const MyBag = () => {
                   </div>
                 </div>
                 <div className="mybagpage-price">€{selectedProduct.price}</div>
+                <div className="delete" onClick={() => deleteItem(selectedProduct)} > <FaTrashAlt /> </div>
               </div>
             </div>
             <div className="mybagpage-line"></div>
