@@ -21,10 +21,7 @@ const MyBag = () => {
   }
   const deleteItem = (product) => {
     const filterProduct = selectedProducts.filter(selectedProduct => selectedProduct.id !== product.id)
-    if (filterProduct) {
-      setSelectedProducts(filterProduct)
-    }
-
+    setSelectedProducts(filterProduct)
   }
 
   return (

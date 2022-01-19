@@ -1,0 +1,43 @@
+.new-product-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.new-product {
+  margin-left: 6.3em;
+  margin-top: 200px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 500px;
+  height: 200px;
+}
+.new-product-line {
+  height: 70vh;
+  position: relative;
+  margin-top: 10%;
+  border: 1px solid rgb(212, 206, 206);
+}
+.icon {
+  border: 1px solid hsl(26, 100%, 55%);
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.product-info,
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  cursor: pointer;
+}
+.product-image {
+  width: 62%;
+}
