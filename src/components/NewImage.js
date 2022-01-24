@@ -4,14 +4,9 @@ import '../companents.css/newproductimage.css'
 const NewImage = () => {
   const [imgPreview, setImgPreview] = useState(null)
   const [error, setError] = useState(false)
-  const [image, setImage] = useState('')
+
 
   const handleImageChange = (e) => {
-    uploadingImage(e)
-    setImage(e.target.files)
-  }
-
-  const uploadingImage = (e) => {
     const selected = e.target.files[0]
     const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image.jpg']
     if (selected && ALLOWED_TYPES.includes(selected.type)) {
@@ -31,7 +26,9 @@ const NewImage = () => {
         <div
           className='imgPreview'
           style={{
-            background: imgPreview ? `url('${imgPreview}') no-repeat center/cover` : 'red'
+            width: 200,
+            height: 200,
+            background: imgPreview ? `url("${imgPreview}") no-repeat center/cover` : `#000000") no-repeat center`
           }}
         >
           {!imgPreview && (
@@ -45,9 +42,7 @@ const NewImage = () => {
             </>
           )}
         </div>
-        {imgPreview && (
-          <button onClick={() => setImgPreview(null)}>Remove Image</button>
-        )}
+
       </div>
       <div className='buttons'>
         <button className="next-button">Back</button>
