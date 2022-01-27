@@ -5,12 +5,9 @@ import ButtonsForImagePage from './ButtonsForImagePage'
 
 
 
-const NewImage = () => {
+const NewImage = ({ imgPreview, setImgPreview, title, setTitle, category, setCategory, price, setPrice }) => {
 
-  const [imgPreview, setImgPreview] = useState(null)
   const [error, setError] = useState(false)
-
-
   const handleImageChange = (e) => {
     const selected = e.target.files[0]
     const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image.jpg']
@@ -24,8 +21,6 @@ const NewImage = () => {
       setError(true)
     }
   }
-
-
 
 
   return (
@@ -54,11 +49,8 @@ const NewImage = () => {
         </div>
 
       </div>
-      <ButtonsForImagePage></ButtonsForImagePage>
+      <ButtonsForImagePage title={title} setTitle={setTitle} category={category} setCategory={setCategory} price={price} setPrice={setPrice} imgPreview={imgPreview} setImgPreview={setImgPreview}></ButtonsForImagePage>
     </div>
-
-
-
   )
 
 }

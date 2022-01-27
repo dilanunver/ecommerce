@@ -1,17 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import '../companents.css/productinfo.css'
 import { MainContext } from "../Context";
 
-const NewProductInfo = () => {
+const NewProductInfo = ({ title, setTitle, category, setCategory, price, setPrice }) => {
   const { setShowInfo, setShowImage } = useContext(MainContext)
-  const [title, setTitle] = useState('')
-  const [category, setCategory] = useState('')
-  const [price, setPrice] = useState('')
+
+
 
   const next = () => {
     setShowImage(true)
     setShowInfo(false)
+
+
   }
+
+
   return (
     <div className="product-information">
       <form className="information-input">
