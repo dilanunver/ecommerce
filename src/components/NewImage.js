@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../companents.css/newproductimage.css'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
 const NewImage = () => {
   const [imgPreview, setImgPreview] = useState(null)
@@ -26,27 +27,27 @@ const NewImage = () => {
         <div
           className='imgPreview'
           style={{
-            width: 200,
-            height: 200,
-            background: imgPreview ? `url("${imgPreview}") no-repeat center/cover` : `#000000") no-repeat center`
+
+            background: imgPreview ? `url("${imgPreview}") no-repeat center/cover` : `") no-repeat center`
           }}
         >
           {!imgPreview && (
             <>
-              <p>Add an image</p>
+
               <label htmlFor='fileUpload' className='customFileUpload'>
-                Choose file
+                <AiOutlinePlusCircle></AiOutlinePlusCircle>
               </label>
+              <p>Add an image</p>
               <input type='file' id='fileUpload' onChange={handleImageChange}></input>
-              <span>(jpeg, jpeg or png)</span>
+              <span>(jpeg, jpg or png)</span>
             </>
           )}
         </div>
 
       </div>
       <div className='buttons'>
-        <button className="next-button">Back</button>
-        <button className="next-button">Complete Order</button>
+        <button className="back-button">Back</button>
+        <button className="complete-button">Complete Order</button>
       </div>
     </div>
   )
