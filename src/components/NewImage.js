@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import '../companents.css/newproductimage.css'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
+import ButtonsForImagePage from './ButtonsForImagePage'
+
+
 
 const NewImage = () => {
+
   const [imgPreview, setImgPreview] = useState(null)
   const [error, setError] = useState(false)
 
@@ -20,7 +24,12 @@ const NewImage = () => {
       setError(true)
     }
   }
+
+
+
+
   return (
+
     <div className="product-image-page">
       <div className='file-container'>
         {error && <p className='errorMessage'>File not supported</p>}
@@ -45,12 +54,15 @@ const NewImage = () => {
         </div>
 
       </div>
-      <div className='buttons'>
-        <button className="back-button">Back</button>
-        <button className="complete-button">Complete Order</button>
-      </div>
+      <ButtonsForImagePage></ButtonsForImagePage>
     </div>
+
+
+
   )
+
 }
+
+
 
 export default NewImage

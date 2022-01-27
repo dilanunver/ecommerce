@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import '../companents.css/newproduct.css'
 import { RiNumber1, RiNumber2 } from 'react-icons/ri'
 import NewProductInfo from './NewProductInfo'
 import NewImage from './NewImage'
+import { MainContext } from "../Context";
 
 
 const AddingNewProduct = () => {
-  const [showInfo, setShowInfo] = useState(true)
-  const [showImage, setShowImage] = useState(false)
+  const { showInfo, setShowInfo, showImage, setShowImage } = useContext(MainContext)
   const productInfo = () => {
     setShowInfo(true)
     setShowImage(false)

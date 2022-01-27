@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import '../companents.css/productinfo.css'
+import { MainContext } from "../Context";
 
 const NewProductInfo = () => {
+  const { setShowInfo, setShowImage } = useContext(MainContext)
+  const [title, setTitle] = useState('')
+  const [category, setCategory] = useState('')
+  const [price, setPrice] = useState('')
+
+  const next = () => {
+    setShowImage(true)
+    setShowInfo(false)
+  }
   return (
     <div className="product-information">
       <form className="information-input">
         <label htmlFor='title'>Title</label>
-        <input type='text' placeholder="enter a title"></input>
+        <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} defaultValue="enter a title" placeholder="enter a title"></input>
         <label htmlFor='category'>Category</label>
-        <select id="category">
+        <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="" disabled selected>Select your option</option>
           <option value="Men's Clothing">Men's Clothing</option>
           <option value="Women's Clothing">Women's Clothing</option>
@@ -16,9 +26,9 @@ const NewProductInfo = () => {
           <option value="Jewelery">Jewelery</option>
         </select>
         <label htmlFor='price'>Price</label>
-        <input type='text' placeholder="enter a price"></input>
+        <input type='text' value={price} onChange={(e) => setPrice(e.target.value)} placeholder="enter a price" defaultValue="enter a price"></input>
       </form>
-      <button className="next-button">Next</button>
+      <button className="next-button" onClick={next}>Next</button>
     </div>
   )
 }

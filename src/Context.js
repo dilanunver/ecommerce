@@ -7,6 +7,8 @@ const Context = ({ children }) => {
   const [isOpenMyBag, setIsOpenMyBag] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [showInfo, setShowInfo] = useState(true)
+  const [showImage, setShowImage] = useState(false)
 
 
   const productsHeader = async () => {
@@ -53,7 +55,11 @@ const Context = ({ children }) => {
     setSelectedProducts,
     isOpenMyBag,
     setIsOpenMyBag,
-    increaseProductCount
+    increaseProductCount,
+    showInfo,
+    setShowInfo,
+    showImage,
+    setShowImage
   }
   return (
     <MainContext.Provider value={data}>
