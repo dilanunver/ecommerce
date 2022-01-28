@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { MainContext } from "../Context";
 
-const ButtonsForImagePage = ({ title, setTitle, category, setCategory, price, setPrice, imgPreview, setImgPreview }) => {
+
+const ButtonsForImagePage = ({ title, category, price, imgPreview, completeOrder }) => {
   const { setShowInfo, setShowImage } = useContext(MainContext)
+
 
 
   const back = () => {
@@ -10,21 +12,7 @@ const ButtonsForImagePage = ({ title, setTitle, category, setCategory, price, se
     setShowImage(false)
   }
 
-  const completeOrder = () => {
-    fetch('https://fakestoreapi.com/products', {
-      method: "POST",
-      body: JSON.stringify(
-        {
-          title,
-          price,
-          image: imgPreview,
-          category
-        }
-      )
-    })
-      .then(res => res.json())
-      .then(json => console.log(json))
-  }
+
 
   return (
     <div className='buttons'>

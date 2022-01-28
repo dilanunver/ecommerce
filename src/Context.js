@@ -24,6 +24,7 @@ const Context = ({ children }) => {
     productsHeader()
   }, [])
 
+
   const increaseProductCount = (product, count) => {
     const sameItem = selectedProducts.find((sameProduct) => sameProduct.id === product.id);
     if (sameItem) {

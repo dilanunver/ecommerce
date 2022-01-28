@@ -52,6 +52,10 @@
   border: 1px solid hsl(26, 100%, 55%);
   margin: 0;
 }
+.complete-button {
+  text-decoration: none;
+  text-align: center;
+}
 .imgPreview {
   display: flex;
   flex-direction: column;

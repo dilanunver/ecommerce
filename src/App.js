@@ -8,7 +8,7 @@ import "./companents.css/app.css"
 import { Context } from "./Context"
 import MyBag from './components/MyBag';
 import AddingNewProduct from './components/AddingNewProduct';
-import NewProductInfo from './components/NewProductInfo';
+import CompleteOrder from './components/CompleteOrder';
 
 
 
@@ -25,6 +25,7 @@ function App() {
           <Route path='/contact' element={<Contact></Contact>}></Route>
           <Route path='/addingNewProduct' element={<AddingNewProduct></AddingNewProduct>}></Route>
           <Route path='/mybag' element={<MyBag></MyBag>}></Route>
+          <Route path='/completeOrder' element={<CompleteOrder ></CompleteOrder>}></Route>
         </Routes>
       </BrowserRouter>
     </Context>

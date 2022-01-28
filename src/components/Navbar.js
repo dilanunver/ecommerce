@@ -8,7 +8,7 @@ import { MainContext } from "../Context";
 
 
 const Navbar = () => {
-  const { selectedProducts, setSelectedProducts, isOpenMyBag, setIsOpenMyBag } = useContext(MainContext)
+  const { selectedProducts, isOpenMyBag, setIsOpenMyBag } = useContext(MainContext)
 
   const sumOfCount = selectedProducts.map((selectedProduct) => (selectedProduct.count));
   let sum = 0;
