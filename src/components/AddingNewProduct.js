@@ -58,17 +58,18 @@ const AddingNewProduct = () => {
     })
   }
 
-  const completedOrder = title !== '' && price !== '' && imgPreview !== null && category !== ''
+  const completedOrder = title !== '' && price !== '' && category !== '' && desc !== '' && size !== []
+  const completedImage = imgPreview !== ''
 
   return (
     <div className='new-product-page'>
       <div className='new-product'>
-        <div className='product-info' onClick={productInfo}> <RiNumber1 className='icon'> </RiNumber1>Product Information  </div>
+        <div className='product-information-new' onClick={productInfo}> <RiNumber1 className='icon'> </RiNumber1>Product Information  </div>
         <div className='product-image' onClick={productImage}><RiNumber2 className='icon'> </RiNumber2>Product Image  </div>
       </div>
       <div className='new-product-line'></div>
-      {showInfo && <NewProductInfo title={title} setTitle={setTitle} desc={desc} setDesc={setDesc} size={size} setSize={setSize} category={category} setCategory={setCategory} price={price} setPrice={setPrice}></NewProductInfo>}
-      {showImage && <NewImage imgPreview={imgPreview} setImgPreview={setImgPreview} title={title} completeOrder={completeOrder} completedOrder={completedOrder} category={category} price={price}></NewImage>}
+      {showInfo && <NewProductInfo title={title} setTitle={setTitle} desc={desc} setDesc={setDesc} size={size} setSize={setSize} category={category} setCategory={setCategory} price={price} setPrice={setPrice} completedOrder={completedOrder}></NewProductInfo>}
+      {showImage && <NewImage imgPreview={imgPreview} setImgPreview={setImgPreview} title={title} completeOrder={completeOrder} completedImage={completedImage} category={category} price={price}></NewImage>}
     </div>
 
   )

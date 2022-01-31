@@ -40,7 +40,8 @@ textarea {
   outline: none;
 }
 
-.next-button {
+.next-button,
+.next-button-disable {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 20px;
   padding: 8px 30px;
@@ -51,6 +52,13 @@ textarea {
   background-color: white;
   cursor: pointer;
 }
+.next-button-disable {
+  pointer-events: none;
+  background-color: rgb(206, 206, 206);
+  border-color: rgb(206, 206, 206);
+  color: hsl(26, 85%, 68%);
+}
+
 .next-button:hover {
   background-color: hsl(26, 100%, 55%);
   color: white;
@@ -61,6 +69,7 @@ textarea {
   width: 350px;
   height: 150px;
   border-radius: 10px;
+  border: 1px solid hsl(26, 100%, 55%);
 }
 textarea::placeholder {
   padding: 10px;

@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom'
 
 const CompleteOrder = () => {
   const { state } = useLocation();
+  console.log(state.size)
   return (
     <div className='complete-order-page'>
       <div className='complete-order-header'>Your New Products</div>
