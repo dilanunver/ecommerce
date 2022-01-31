@@ -9,6 +9,7 @@ const Context = ({ children }) => {
   const [loading, setLoading] = useState(true)
   const [showInfo, setShowInfo] = useState(true)
   const [showImage, setShowImage] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
 
 
   const productsHeader = async () => {
@@ -60,7 +61,9 @@ const Context = ({ children }) => {
     showInfo,
     setShowInfo,
     showImage,
-    setShowImage
+    setShowImage,
+    isClicked,
+    setIsClicked
   }
   return (
     <MainContext.Provider value={data}>

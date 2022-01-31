@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MainContext } from "../Context";
 
 
-const ButtonsForImagePage = ({ title, category, price, imgPreview, completeOrder, completedImage }) => {
+const ButtonsForImagePage = ({ imgPreview, completeOrder }) => {
   const { setShowInfo, setShowImage } = useContext(MainContext)
 
 
@@ -11,13 +11,13 @@ const ButtonsForImagePage = ({ title, category, price, imgPreview, completeOrder
     setShowInfo(true)
     setShowImage(false)
   }
-  console.log(completedImage)
 
+  console.log(imgPreview)
 
   return (
     <div className='buttons'>
       <button className="back-button" onClick={back} >Back</button>
-      {!completedImage ? <button className="complete-button-disable" >Complete Order</button> :
+      {!imgPreview ? <button className="complete-button-disable" >Complete Order</button> :
         <button className="complete-button" onClick={completeOrder}>Complete Order</button>
       }
 

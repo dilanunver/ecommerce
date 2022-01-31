@@ -3,7 +3,9 @@ import '../companents.css/productinfo.css'
 import { MainContext } from "../Context";
 
 const NewProductInfo = ({ title, setTitle, category, setCategory, price, setPrice, desc, setDesc, size, setSize, completedOrder }) => {
-  const { setShowInfo, setShowImage } = useContext(MainContext)
+  const { setShowInfo, setShowImage, setIsClicked } = useContext(MainContext)
+
+
 
   const handleSize = (e) => {
     const nameOfTarget = e.target.name;
@@ -19,8 +21,7 @@ const NewProductInfo = ({ title, setTitle, category, setCategory, price, setPric
   const next = () => {
     setShowImage(true)
     setShowInfo(false)
-
-
+    setIsClicked(true)
   }
   console.log(completedOrder)
 

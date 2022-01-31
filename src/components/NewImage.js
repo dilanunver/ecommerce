@@ -5,7 +5,7 @@ import ButtonsForImagePage from './ButtonsForImagePage'
 
 
 
-const NewImage = ({ imgPreview, setImgPreview, title, setTitle, category, setCategory, price, setPrice, completeOrder, completedImage }) => {
+const NewImage = ({ imgPreview, setImgPreview, title, setTitle, category, setCategory, price, setPrice, completeOrder }) => {
 
   const [error, setError] = useState(false)
   const handleImageChange = (e) => {
@@ -49,7 +49,7 @@ const NewImage = ({ imgPreview, setImgPreview, title, setTitle, category, setCat
         </div>
 
       </div>
-      <ButtonsForImagePage title={title} setTitle={setTitle} category={category} setCategory={setCategory} completedImage={completedImage} completeOrder={completeOrder} price={price} setPrice={setPrice} imgPreview={imgPreview} setImgPreview={setImgPreview}></ButtonsForImagePage>
+      <ButtonsForImagePage title={title} setTitle={setTitle} category={category} setCategory={setCategory} completeOrder={completeOrder} price={price} setPrice={setPrice} imgPreview={imgPreview} setImgPreview={setImgPreview}></ButtonsForImagePage>
     </div>
   )
 

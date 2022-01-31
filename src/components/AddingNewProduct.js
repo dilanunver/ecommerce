@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 const AddingNewProduct = () => {
 
-  const { showInfo, setShowInfo, showImage, setShowImage } = useContext(MainContext)
+  const { showInfo, showImage, isClicked, setIsClicked } = useContext(MainContext)
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('')
   const [price, setPrice] = useState('')
@@ -18,15 +18,7 @@ const AddingNewProduct = () => {
   const [imgPreview, setImgPreview] = useState(null)
   const [size, setSize] = useState([])
   const navigate = useNavigate();
-  const productInfo = () => {
-    setShowInfo(true)
-    setShowImage(false)
-  }
 
-  const productImage = () => {
-    setShowImage(true)
-    setShowInfo(false)
-  }
 
   const completeOrder = async () => {
     await fetch('https://fakestoreapi.com/products', {
@@ -59,17 +51,21 @@ const AddingNewProduct = () => {
   }
 
   const completedOrder = title !== '' && price !== '' && category !== '' && desc !== '' && size !== []
-  const completedImage = imgPreview !== ''
+
 
   return (
     <div className='new-product-page'>
       <div className='new-product'>
-        <div className='product-information-new' onClick={productInfo}> <RiNumber1 className='icon'> </RiNumber1>Product Information  </div>
-        <div className='product-image' onClick={productImage}><RiNumber2 className='icon'> </RiNumber2>Product Image  </div>
+        <div className='product-information-new' >
+          {isClicked ? <RiNumber1 className='icon-green'> </RiNumber1> : <RiNumber1 className='icon'> </RiNumber1>}
+          Product Information  </div>
+        <div className='product-image' >
+          {imgPreview ? <RiNumber2 className='icon-green'> </RiNumber2> : <RiNumber2 className='icon'> </RiNumber2>}
+          Product Image  </div>
       </div>
       <div className='new-product-line'></div>
       {showInfo && <NewProductInfo title={title} setTitle={setTitle} desc={desc} setDesc={setDesc} size={size} setSize={setSize} category={category} setCategory={setCategory} price={price} setPrice={setPrice} completedOrder={completedOrder}></NewProductInfo>}
-      {showImage && <NewImage imgPreview={imgPreview} setImgPreview={setImgPreview} title={title} completeOrder={completeOrder} completedImage={completedImage} category={category} price={price}></NewImage>}
+      {showImage && <NewImage imgPreview={imgPreview} setImgPreview={setImgPreview} title={title} completeOrder={completeOrder} category={category} price={price}></NewImage>}
     </div>
 
   )
