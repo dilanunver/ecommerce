@@ -1,8 +1,7 @@
 .home-photo {
   display: flex;
   justify-content: center;
-  margin-left: 10em;
-  margin-top: 150px;
+
   height: 100%;
   width: auto;
 }
@@ -16,6 +15,19 @@
   width: auto;
 }
 .carousel-photo {
-  margin: 0 4em;
-  margin-right: 5em;
+  cursor: pointer;
+  width: 84%;
+  margin-left: 14em;
+  margin-top: 155px;
+  margin-bottom: 5px;
+}
+.control-dots {
+  display: none;
+}
+.carousel-photo:hover {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.carousel-root carousel-photo {
+  margin-left: 50px;
 }
