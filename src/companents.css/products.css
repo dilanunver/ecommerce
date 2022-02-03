@@ -125,6 +125,7 @@
   margin: 0;
   margin-right: 10px;
 }
+
 .add-to-cart:disabled {
   background-color: hsl(25, 88%, 68%);
   color: white;
